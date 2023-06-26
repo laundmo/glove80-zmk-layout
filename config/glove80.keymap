@@ -218,6 +218,16 @@
             bindings = <&oe>;
             key-positions = <25 31>;
         };
+
+        ae {
+            bindings = <&ae>;
+            key-positions = <35 25>;
+        };
+
+        ss {
+            bindings = <&ss_ger>;
+            key-positions = <47 36>;
+        };
     };
 
     keymap {
