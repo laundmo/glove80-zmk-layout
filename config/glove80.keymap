@@ -36,6 +36,16 @@
                 <&mo 1>,
                 <&to 1>;
         };
+        ue_sm_l: ue_sm_l {
+            compatible = "zmk,behavior-mod-morph";
+            label = "UE_SM_L";
+            bindings =
+                <&ue_ger>,
+                <&ue_ger>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     macros {
@@ -85,7 +95,7 @@
             compatible = "zmk,behavior-macro";
             label = "UE_GER";
             #binding-cells = <0>;
-            bindings = <&kp LA(KP_N0) &kp LA(KP_N2) &kp LA(KP_N5) &kp LA(KP_N0)>;
+            bindings = <&kp &kp LA(KP_N2) &kp LA(KP_N5) &kp LA(KP_N0)>;
         };
     };
 
@@ -122,7 +132,7 @@
    &kp TAB     &kp Q    &kp W     &kp E      &kp R   &kp T                                                                   &kp Y   &kp U      &kp I     &kp O     &kp P   &kp BSLH
    &kp ESC     &kp A    &kp S     &kp D      &kp F   &kp G                                                                   &kp H   &kp J      &kp K     &kp L  &kp SEMI    &kp SQT
  &kp GRAVE     &kp Z    &kp X     &kp C      &kp V   &kp B  &kp LSHFT  &kp LCTRL    &lower  &kp LGUI  &kp RCTRL  &kp RSHFT   &kp N   &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp PG_UP
-&magic 2 0  &kp HOME  &kp END  &kp LEFT  &kp RIGHT           &kp BSPC    &kp DEL  &kp LALT  &kp RALT    &kp RET  &kp SPACE          &kp UP   &kp DOWN  &kp LBKT  &kp RBKT  &kp PG_DN
+&magic 0 0  &kp HOME  &kp END  &kp LEFT  &kp RIGHT           &kp BSPC    &kp DEL  &kp LALT  &kp RALT    &kp RET  &kp SPACE          &kp UP   &kp DOWN  &kp LBKT  &kp RBKT  &kp PG_DN
             >;
         };
 
@@ -133,18 +143,7 @@
       &trans         &none           &none    &kp UP_ARROW            &none    &kp END                                                  &kp RIGHT_PARENTHESIS   &kp KP_N7     &kp KP_N8     &kp KP_N9     &kp KP_MINUS   &kp SCROLLLOCK
       &trans         &none  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PG_UP                                                            &kp PERCENT   &kp KP_N4     &kp KP_N5     &kp KP_N6      &kp KP_PLUS            &none
       &trans     &kp K_APP           &none         &kp F11          &kp F12  &kp PG_DN  &trans  &trans   &to 0  &trans  &trans  &trans              &kp COMMA   &kp KP_N1     &kp KP_N2     &kp KP_N3     &kp KP_ENTER           &trans
-  &magic 2 0      &kp CAPS         &kp INS         &kp F11          &kp F12             &trans  &trans  &trans  &trans  &trans  &trans                          &kp KP_N0     &kp KP_N0    &kp KP_DOT     &kp KP_ENTER           &trans
-            >;
-        };
-
-        layer_Magic {
-            bindings = <
- &bt BT_CLR            &none            &none            &none            &none                                                                           &none  &none  &none  &none  &bt BT_CLR_ALL
-      &none            &none            &none            &none            &none            &none                                                   &none  &none  &none  &none  &none           &none
-     &trans  &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                   &none  &none  &none  &none  &none           &none
-&bootloader  &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                   &none  &none  &none  &none  &none     &bootloader
-     &reset            &none            &none            &none            &none            &none  &bt_2  &bt_3         &none  &none  &none  &none  &none  &none  &none  &none  &none          &reset
-      &none            &none            &none            &none            &none                   &bt_0  &bt_1  &out OUT_USB  &none  &none  &none         &none  &none  &none  &none           &none
+  &magic 0 0      &kp CAPS         &kp INS         &kp F11          &kp F12             &trans  &trans  &trans  &trans  &trans  &trans                          &kp KP_N0     &kp KP_N0    &kp KP_DOT     &kp KP_ENTER           &trans
             >;
         };
     };
