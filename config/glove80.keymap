@@ -36,12 +36,22 @@
                 <&mo 1>,
                 <&to 1>;
         };
-        ue_sm_l: ue_sm_l {
+        ue: ue {
             compatible = "zmk,behavior-mod-morph";
-            label = "UE_SM_L";
+            label = "UE";
             bindings =
-                <&ue_ger>,
-                <&ue_ger>;
+                <&ue_ger_lower>,
+                <&ue_ger_upper>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+        oe: oe {
+            compatible = "zmk,behavior-mod-morph";
+            label = "OE";
+            bindings =
+                <&oe_ger_lower>,
+                <&oe_ger_upper>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
@@ -55,47 +65,65 @@
             #binding-cells = <0>;
             bindings = <&rgb_ug RGB_STATUS>;
         };
-    };
-
-    macros {
         bt_0: bt_profile_macro_0 {
             label = "BT_0";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&out OUT_BLE &bt BT_SEL 0>;
         };
-    };
-
-    macros {
         bt_1: bt_profile_macro_1 {
             label = "BT_1";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&out OUT_BLE &bt BT_SEL 1>;
         };
-    };
-
-    macros {
         bt_2: bt_profile_macro_2 {
             label = "BT_2";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&out OUT_BLE &bt BT_SEL 2>;
         };
-    };
-
-    macros {
         bt_3: bt_profile_macro_3 {
             label = "BT_3";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&out OUT_BLE &bt BT_SEL 3>;
         };
-        ue_ger: ue_ger {
+        ue_ger_lower: ue_ger_lower {
             compatible = "zmk,behavior-macro";
-            label = "UE_GER";
+            label = "UE_GER_LOWER";
             #binding-cells = <0>;
-            bindings = <&kp &kp LA(KP_N2) &kp LA(KP_N5) &kp LA(KP_N0)>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N5 &kp KP_N2>
+                , <&macro_release &kp LALT>;
+        };
+        ue_ger_upper: ue_ger_upper {
+            compatible = "zmk,behavior-macro";
+            label = "UE_GER_UPPER";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N2 &kp KP_N0>
+                , <&macro_release &kp LALT>;
+        };
+        oe_ger_lower: oe_ger_lower {
+            compatible = "zmk,behavior-macro";
+            label = "OE_GER_LOWER";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N4 &kp KP_N6>
+                , <&macro_release &kp LALT>;
+        };
+        oe_ger_upper: oe_ger_upper {
+            compatible = "zmk,behavior-macro";
+            label = "OE_GER_UPPER";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press   &kp LALT>
+                , <&macro_tap     &kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N4>
+                , <&macro_release &kp LALT>;
         };
     };
 
