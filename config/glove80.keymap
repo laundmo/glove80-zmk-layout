@@ -36,36 +36,6 @@
                 <&mo 2>,
                 <&to 1>;
         };
-        ue: ue {
-            compatible = "zmk,behavior-mod-morph";
-            label = "UE";
-            bindings =
-                <&ue_ger_lower>,
-                <&ue_ger_upper>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        oe: oe {
-            compatible = "zmk,behavior-mod-morph";
-            label = "OE";
-            bindings =
-                <&oe_ger_lower>,
-                <&oe_ger_upper>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-        ae: ae {
-            compatible = "zmk,behavior-mod-morph";
-            label = "AE";
-            bindings =
-                <&ae_ger_lower>,
-                <&ae_ger_upper>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
     };
 
     macros {
@@ -99,97 +69,6 @@
             #binding-cells = <0>;
             bindings = <&out OUT_BLE &bt BT_SEL 3>;
         };
-        ue_ger_lower: ue_ger_lower {
-            compatible = "zmk,behavior-macro";
-            label = "UE_GER_LOWER";
-            wait-ms = <8>;
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N5 &kp KP_N2>,
-                <&macro_release>,
-                <&kp LALT>;
-        };
-        ue_ger_upper: ue_ger_upper {
-            compatible = "zmk,behavior-macro";
-            label = "UE_GER_UPPER";
-            wait-ms = <8>;
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N2 &kp KP_N0>,
-                <&macro_release>,
-                <&kp LALT>;
-        };
-        oe_ger_lower: oe_ger_lower {
-            compatible = "zmk,behavior-macro";
-            label = "OE_GER_LOWER";
-            wait-ms = <8>;
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N4 &kp KP_N6>,
-                <&macro_release>,
-                <&kp LALT>;
-        };
-        oe_ger_upper: oe_ger_upper {
-            compatible = "zmk,behavior-macro";
-            label = "OE_GER_UPPER";
-            wait-ms = <8>;
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N1 &kp KP_N4>,
-                <&macro_release>,
-                <&kp LALT>;
-        };
-        ae_ger_lower: ae_ger_lower {
-            compatible = "zmk,behavior-macro";
-            label = "AE_GER_LOWER";
-            wait-ms = <8>;
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N2 &kp KP_N8>,
-                <&macro_release>,
-                <&kp LALT>;
-        };
-        ae_ger_upper: ae_ger_upper {
-            compatible = "zmk,behavior-macro";
-            label = "AE_GER_UPPER";
-            wait-ms = <8>;
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N1 &kp KP_N9 &kp KP_N6>,
-                <&macro_release>,
-                <&kp LALT>;
-        };
-        ss_ger: ss_ger {
-            compatible = "zmk,behavior-macro";
-            label = "AE_GER";
-            wait-ms = <8>;
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LALT>,
-                <&macro_tap>,
-                <&kp KP_N0 &kp KP_N2 &kp KP_N2 &kp KP_N3>,
-                <&macro_release>,
-                <&kp LALT>;
-        };
     };
 
     magic: magic_hold_tap {
@@ -208,25 +87,15 @@
 
     combos {
         compatible = "zmk,combos";
-
-        ue {
-            bindings = <&ue>;
-            key-positions = <25 29>;
+        combo_f11 {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp F11>;
         };
-
-        oe {
-            bindings = <&oe>;
-            key-positions = <25 31>;
-        };
-
-        ae {
-            bindings = <&ae>;
-            key-positions = <35 25>;
-        };
-
-        ss {
-            bindings = <&ss_ger>;
-            key-positions = <47 36>;
+        combo_f12 {
+            timeout-ms = <50>;
+            key-positions = <8 9>;
+            bindings = <&kp F12>;
         };
     };
 
@@ -239,7 +108,7 @@
  &kp EQUAL    &kp N1   &kp N2    &kp N3     &kp N4  &kp N5                                                                       &kp N6  &kp N7     &kp N8    &kp N9    &kp N0  &kp MINUS
    &kp ESC     &kp Q    &kp W     &kp E      &kp R   &kp T                                                                        &kp Y   &kp U      &kp I     &kp O     &kp P   &kp BSLH
    &kp TAB     &kp A    &kp S     &kp D      &kp F   &kp G                                                                        &kp H   &kp J      &kp K     &kp L  &kp SEMI    &kp SQT
- &kp GRAVE     &kp Z    &kp X     &kp C      &kp V   &kp B  &kp LSHFT      &kp LCTRL    &lower  &kp LGUI  &kp RCTRL   &kp RSHFT   &kp N   &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp PG_UP
+ &kp GRAVE     &kp Z    &kp X     &kp C      &kp V   &kp B  &kp LSHFT      &kp LCTRL  &kp LGUI    &lower    &kp RCTRL   &kp RSHFT   &kp N   &kp M  &kp COMMA   &kp DOT  &kp FSLH  &kp PG_UP
 &magic 3 0  &kp HOME  &kp END  &kp LEFT  &kp RIGHT          &kp SPACE  &kp BACKSPACE  &kp LALT  &kp RALT    &kp RET  &kp DELETE          &kp UP   &kp DOWN  &kp LBKT  &kp RBKT  &kp PG_DN
             >;
         };
