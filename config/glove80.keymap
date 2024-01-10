@@ -120,7 +120,7 @@
           &trans        &trans        &trans        &trans        &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
           &trans        &trans        &trans        &trans        &trans  &trans                                                  &trans  &trans  &trans  &trans  &trans  &trans
       &kp LSHIFT        &trans        &trans        &trans        &trans  &trans  &trans  &trans  &trans  &to 0   &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&kp LEFT_CONTROL  &kp NUMBER_9  &kp NUMBER_8  &kp NUMBER_7  &kp NUMBER_6          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
+&kp LEFT_CONTROL  &kp NUMBER_9  &kp NUMBER_8        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &trans          &trans  &trans  &trans  &trans  &trans
             >;
         };
 
